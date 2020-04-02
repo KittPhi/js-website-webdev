@@ -6,8 +6,9 @@ const port = 3000;
 // allows http://localhost:3000/hello.html in public folder
 app.use(express.static("public"));
 
-// url body parsing middleware
+// url and json body parsing middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('/', (request, response) => response.send('Hello World!'));
 
@@ -15,6 +16,14 @@ app.post('/formSubmit', function(request, response) {
     console.log(request.body.user.name);
     console.log(request.body.user.email);
     response.send("Success");
+})
+
+app.post('/car', function(request, response) {
+    console.log(request.body.make);
+    console.log(request.body.model);
+    console.log(request.body.year);
+    console.log(request.body.color);
+    response.send("Success!");
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
