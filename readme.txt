@@ -1,6 +1,7 @@
+ref: https://expressjs.com/en/starter/hello-world.html
 npm init
 "name": "multiplayer"
-npm install express socket.io --save
+npm install express --save
 > run || node index.js
 > open http://localhost:3000/
 > create public folder
@@ -8,5 +9,10 @@ npm install express socket.io --save
 > http://localhost:3000/hello.html
 npm i body-parser
 
-ref: https://expressjs.com/en/starter/hello-world.html
+ref: https://www.npmjs.com/package/socket.io
+npm i socket.io
+
+> node index.js
+npm i express socket.io --> was a fix for error
+
 
