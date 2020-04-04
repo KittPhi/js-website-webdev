@@ -1,0 +1,43 @@
+.canvas {
+	width: 400px;
+	height: 400px;
+	border: 10px solid #6e5837;
+}
+
+.row {
+	display: table-row;
+	margin: 0;
+	padding: 0;
+}
+
+.bblack, .bwhite {
+	display: table-cell;
+	border-color: #080501;
+	border-width: 1px;
+	border-style: solid;
+	width: 48px;
+	height: 48px;
+	margin: 0;
+	padding: 0;
+}
+
+.bblack {
+	background-color: #6e5837;
+}
+
+.bwhite {
+	background-color: #959c81;
+}
+
+.piece {
+	margin-left: 4px;
+	margin-top: 4px;
+}
+
+.bblack.drop {
+	opacity: 0.5;
+}
+
+.piece.selected {
+	opacity: 0.5;
+}
