@@ -5,9 +5,9 @@
     <title>Socket.IO chat</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="/socket.io/socket.io.js"></script>
-
-   <script>
-       window.onload = () => {
+    <script src="game.js"></script>
+    <script>
+        window.onload = () => {
         var socket = io();
         var form = document.getElementById('chatForm'); // form id
 
@@ -33,13 +33,24 @@
    </script>
 </head>
    <body>
-       <div id="msgWindow">
+        <div id="msgWindow">
         <ul id="msg"></ul>
-       <form id="chatForm" action="">
+        <form id="chatForm" action="">
            <input id="input" autocomplete="off" />
            <button>Send</button>
-       </form>
-       </div>
-       
+        </form>
+        </div> 
+
+        <div id="board" class="canvas"></div>
+        
+        <button onclick="createBoard()">Create Board</button>
+        <button onclick="allowDrop()">Start Game</button>
+        
+        <footer class="info">
+            <center>
+                <hr>
+                <p>Socket.io Express Checkers by <a href="https://web.nmsu.edu/~kittphi/contact.html">Kitt Phi</a> in 2020.</p>
+            </center>
+        </footer>
     </body>
 </html>

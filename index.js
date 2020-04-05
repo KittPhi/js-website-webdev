@@ -18,10 +18,15 @@ app.get('/', function(request, response) {
     response.sendFile(__dirname + '/index.html');
 });
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log('socket connected');
     socket.on('chat', (message) => {
         io.emit('chat', message);
     });
+
+    socket.on('callServer', (data) => {
+        console.log(data);
+        socket.emit('connect', 'Hello Client');
+    })
  });
 server.listen(port, function() {
     console.log(`listening on port ${port}`);
