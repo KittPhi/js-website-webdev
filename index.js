@@ -27,6 +27,32 @@ io.on('connection', (socket) => {
         console.log(data);
         socket.emit('connect', 'Hello Client');
     })
+    // game emits
+    // -------------------------------
+    socket.on('board', (data) => {
+        io.emit('board', data);
+    })
+    socket.on('row', (data) => {
+        io.emit('row', data);
+    })
+    socket.on('square', (data) => {
+        io.emit('square', data);
+    })
+    socket.on('img', (data) => {
+        io.emit('img', data);
+    })
+    socket.on('squares', (data) => {
+        io.emit('squares', data);
+    })
+    socket.on('pieces', (data) => {
+        io.emit('pieces', data);
+    })
+    socket.on('dragPiece', (data) => {
+        io.emit('dragPiece', data);
+    })
+    socket.on('droppedPiece', (data) => {
+        io.emit('droppedPiece', data);
+    })
  });
 server.listen(port, function() {
     console.log(`listening on port ${port}`);

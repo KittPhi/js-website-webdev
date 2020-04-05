@@ -4,6 +4,18 @@ var socket = io();
 socket.on('connect', () => {
     // function callback 
     socket.emit('callServer', 'Hello Server');
+
+    // game emits
+    // -----------------------------------------
+    socket.emit('board', 'board');
+    socket.emit('row', 'row');
+    socket.emit('square', 'square');
+    socket.emit('img', 'image');
+    socket.emit('squares', 'squares');
+    socket.emit('pieces', 'pieces');
+    socket.emit('dragPiece', 'dragPiece');
+    socket.emit('droppedPiece' , 'droppedPiece');
+    // --------------------------------------------
 });
 
 const createBoard = () => {
@@ -12,7 +24,7 @@ const createBoard = () => {
         var row = document.createElement("div");  // create div element for each
         row.className = "row"; // set className property of div to "row"
         board.appendChild(row); // insert into the body element
-
+        socket.emit('board', row); // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         for (var x=0; x < 8; x++) {
             var square = document.createElement("div");
             square.id = x.toFixed() + y.toString();
@@ -22,7 +34,7 @@ const createBoard = () => {
             else {
                 square.className = "bwhite";
             }
-
+            socket.emit('row', square); // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // If the square should have a piece in it...
             if ((x + y) % 2 != 0 && y != 3 && y != 4) {
                 var img = document.createElement("img");
