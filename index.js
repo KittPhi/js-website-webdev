@@ -19,8 +19,8 @@ app.get('/', function(request, response) {
 });
 io.on('connection', (socket) => {
     console.log('a user connected');
-    socket.on('chat message', (message) => {
-        io.emit('chat message', message);
+    socket.on('chat', (message) => {
+        io.emit('chat', message);
     });
  });
 server.listen(port, function() {

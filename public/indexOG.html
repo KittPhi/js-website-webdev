@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Checkers</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+   <style>
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+       body { font: 13px Helvetica, Arial; }
+       form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+       form input { border: 0; padding: 5px; width: 75%; }
+       form button { width: 20%; background: rgb(130, 124, 255); border: none; }
+       #chat { list-style-type: none; margin: 0; padding: 0; }
+       #chat li { padding: 5px 10px; }
+       #chat li:nth-child(odd) { background: #eee; }
+   </style>
+   <script  src="/socket.io/socket.io.js"></script>
+   <script src="game.js"></script>
+
+   </head>
+   <body>
+
+        <div id="board" class="canvas"></div>
+        <div class="info">
+            <center>
+                <hr>
+                <p>Socket.io Express Checkers by <a href="https://web.nmsu.edu/~kittphi/contact.html">Kitt Phi</a> in 2020.</p>
+            </center>
+        </div>
+
+        <button onclick="createBoard()">Create Board</button>
+        <button onclick="allowDrop()">Start Game</button>
+       <ul id="chat"></ul>
+       <form id="chatForm" action="">
+           <input id="m" autocomplete="off" />
+           <button onclick="submitForm()">Send</button>
+       </form>
+
+   </body>
+   </html>
